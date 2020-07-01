@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 
 
   root 'home#index'
-  namespace :dashboard do
+  scope :dashboard, module: :dashboard do
     get "/" => "dashboard#index"
+    resources :reverses
   end
   mount Sidekiq::Web => '/sidekiq'
 end

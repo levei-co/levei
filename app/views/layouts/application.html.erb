@@ -15,6 +15,8 @@
   </head>
 
   <body>
-    <%= content_for?(:content) ? yield(:content) : yield %>
+    <div id="app">
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    </div>
   </body>
 </html>
