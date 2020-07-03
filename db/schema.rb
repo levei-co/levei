@@ -10,19 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_235308) do
+ActiveRecord::Schema.define(version: 2020_07_02_235501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "buyers", force: :cascade do |t|
+    t.string "external_id"
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "interactions", force: :cascade do |t|
+    t.bigint "reverse_id", null: false
+    t.string "question"
+    t.string "answer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reverse_id"], name: "index_interactions_on_reverse_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "external_id"
+    t.string "name"
+    t.decimal "price"
+    t.bigint "reverse_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reverse_id"], name: "index_products_on_reverse_id"
+  end
+
   create_table "reverses", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "order_id"
+    t.string "external_order_id"
     t.integer "status"
     t.integer "reason"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "reason_change_to"
     t.index ["user_id"], name: "index_reverses_on_user_id"
+  end
+
+  create_table "shipping_addresses", force: :cascade do |t|
+    t.string "address1"
+    t.string "address2"
+    t.string "number"
+    t.string "district"
+    t.string "city"
+    t.string "state"
+    t.string "zipcode"
+    t.bigint "reverse_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reverse_id"], name: "index_shipping_addresses_on_reverse_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,5 +80,8 @@ ActiveRecord::Schema.define(version: 2020_06_30_235308) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "interactions", "reverses"
+  add_foreign_key "products", "reverses"
   add_foreign_key "reverses", "users"
+  add_foreign_key "shipping_addresses", "reverses"
 end
