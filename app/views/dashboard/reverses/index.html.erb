@@ -12,7 +12,6 @@
       <div class="card-header">
         <h4>Lista de Reversas</h4>
         <div class="card-header-action">
-          <%= link_to icon('fas fa-plus', 'New Reverse'), new_reverse_path, class: 'btn btn-icon icon-left btn-primary' %>
           <%= render 'shared/card_dropdown' do %>
             <%= link_to icon('fas fa-download', 'Export Data'), reverses_path(format: :csv, q: request.params[:q]), class: 'dropdown-item has-icon' %>
             <%= link_to icon('fas fa-print', 'Print Page'), 'javascript:window.print()', class: 'dropdown-item has-icon' %>
@@ -34,10 +33,10 @@
           <table class="table table-striped table-md">
             <thead>
               <tr>
-                <th><%= sort_link_turbo(@search, :order_id) %></th>
+                <th><%= sort_link_turbo(@search, :order_id, 'Pedido') %></th>
                 <th><%= sort_link_turbo(@search, :status) %></th>
-                <th><%= sort_link_turbo(@search, :reason) %></th>
-                <th>Actions</th>
+                <th><%= sort_link_turbo(@search, :reason, 'Motivo') %></th>
+                <th></th>
               </tr>
             </thead>
             <tbody data-target="infinite-page.container">

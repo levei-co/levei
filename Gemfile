@@ -36,6 +36,8 @@ gem 'platform_agent'
 gem 'geared_pagination'
 gem 'spreadsheet_architect'
 gem 'devise'
+gem 'chartkick'
+gem 'groupdate'
 
 group :production do
   gem 'redis'

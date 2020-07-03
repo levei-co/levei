@@ -1,0 +1,112 @@
+<section class="section">
+  <div class="section-header d-mobile-none">
+    <h1>Relatorio</h1>
+     <div class="section-header-breadcrumb">
+      <div class="breadcrumb-item"><%= link_to 'Dashboard', root_path %></div>
+      <div class="breadcrumb-item">Relatorio</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+      <div class="card card-statistic-1">
+        <div class="card-icon bg-primary">
+          <i class="fas fa-exchange-alt"></i>
+        </div>
+        <div class="card-wrap">
+          <div class="card-header">
+            <h4>Trocas</h4>
+          </div>
+          <div class="card-body">
+            10
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+      <div class="card card-statistic-1">
+        <div class="card-icon bg-danger">
+          <i class="fas fa-long-arrow-alt-left"></i>
+        </div>
+        <div class="card-wrap">
+          <div class="card-header">
+            <h4>Devolucoes(creditos)</h4>
+          </div>
+          <div class="card-body">
+            43
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+      <div class="card card-statistic-1">
+        <div class="card-icon bg-warning">
+          <i class="fas fa-long-arrow-alt-down"></i>
+        </div>
+        <div class="card-wrap">
+          <div class="card-header">
+            <h4>Devolucoes(estorno)</h4>
+          </div>
+          <div class="card-body">
+            43
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Economia em logistica reversa</h5>
+          <h5><small>Vejo quanto voce ja economizou desde que comecou a usar a Levei</small></h5>
+          </br>
+          <%= area_chart(
+              { 'Sat, 24 May 2020' => 50, 'Sun, 25 May 2020' => 100, 'Mon, 26 May 2020' => 34 }, 
+              colors: ["rgba(63,82,227,.8)"], 
+              legend: false, 
+              dataset: {borderColor: '#6777ef', pointBackgroundColor: '#ffffff', pointRadius: 4} 
+            ) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 col-sm-6 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5>Conversoes</h5>
+          <h5><small>Veja as conversoes de devolucao</small></h5>
+          </br>
+          <%= column_chart([
+            {name: 'Estornos convertidos em creditos', data: { 'Sat, 24 May 2020' => 50, 'Sun, 25 May 2020' => 100, 'Mon, 26 May 2020' => 34 }},
+            {name: 'Devolucoes convertidas em trocas', data: { 'Sat, 24 May 2020' => 70, 'Sun, 25 May 2020' => 10, 'Mon, 26 May 2020' => 44 }}
+          ], colors: ["rgba(254,86,83,.7)", "rgba(63,82,227,.8)"], legend: "bottom") %>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5>NPS</h5>
+          <h5><small>Indice de satisfacao do cliente</small></h5>
+          </br>
+          <%= pie_chart(
+            { 'Sat, 24 May 2020' => 79, 'Sun, 25 May 2020' => 21 },
+            legend: false,
+            donut: true,
+            colors: ["#63ed7a"],
+            library: {cutoutPercentage: 85}
+          ) %>
+          <div class="chart-text-center text-center">
+            <h1><strong>79</strong></h1>
+            <h2><small>Pontos</small></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% content_for(:page_title, 'Dashboard') %>

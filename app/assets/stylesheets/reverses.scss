@@ -1,3 +1,53 @@
 // Place all the styles related to the reverses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.activities {
+  display: flex;
+  flex-wrap: unset;
+  margin-bottom: 50px;
+
+  .activity {
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      left: 25px;
+      top: 28px;
+      width: 100%;
+      height: 4px;
+      background-color: #6777ef;
+    }
+
+    .activity-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 3px;
+      line-height: 56px;
+      font-size: 25px;
+      text-align: center;
+      margin-right: 20px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      text-align: center;
+      z-index: 1;
+
+      i.fas {
+        font-size: 18px;
+      }
+    }
+
+    .activity-label {
+      position: absolute;
+      top: 65px;
+      left: 0px;
+      font-size: 15px;
+      color: #191d21;
+      font-weight: 600;
+    }
+  }
+}

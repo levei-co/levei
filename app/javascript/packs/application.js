@@ -22,6 +22,8 @@ require("select2")
 require("cleave.js")
 require("waypoints/lib/noframework.waypoints")
 require("waypoints/lib/shortcuts/infinite")
+require("chartkick")
+require("chart.js")
 
 window.iziToast = require("izitoast")
 
