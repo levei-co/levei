@@ -1,13 +1,13 @@
 <div class="main-sidebar sidebar-style-2">
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-      <%= link_to 'Levei', root_path  %>
+      <%= link_to root_path do  %>
+        <%= image_tag('levei-logo-06', alt: 'logo', width: '100') %>
+      <% end %>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
-      <%# link_to 'St', root_path %>
       <%= link_to root_path do %>
-        <!-- <i class="fas fa-file-alt"></i> -->
-        <%= image_tag('stisla-fill', alt: 'logo', width: '30') %>
+        <%= image_tag('levei-logo-07', alt: 'logo', width: '30') %>
       <% end %>
     </div>
     <ul class="sidebar-menu" data-controller="sidebar">

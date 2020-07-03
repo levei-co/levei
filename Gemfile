@@ -38,6 +38,7 @@ gem 'spreadsheet_architect'
 gem 'devise'
 gem 'chartkick'
 gem 'groupdate'
+gem 'faker'
 
 group :production do
   gem 'redis'

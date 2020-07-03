@@ -33,7 +33,7 @@
           <table class="table table-striped table-md">
             <thead>
               <tr>
-                <th><%= sort_link_turbo(@search, :order_id, 'Pedido') %></th>
+                <th><%= sort_link_turbo(@search, :external_order_id, 'Pedido') %></th>
                 <th><%= sort_link_turbo(@search, :status) %></th>
                 <th><%= sort_link_turbo(@search, :reason, 'Motivo') %></th>
                 <th></th>
@@ -42,7 +42,7 @@
             <tbody data-target="infinite-page.container">
               <% @reverses.each do |reverse| %>
                 <tr data-target="infinite-page.item">
-                  <td><%= reverse.order_id %></td>
+                  <td><%= reverse.external_order_id %></td>
                   <td><%= reverse.status %></td>
                   <td><%= reverse.reason %></td>
                   <td>

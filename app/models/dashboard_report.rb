@@ -5,6 +5,14 @@ class DashboardReport
     @user = user
   end
 
+  def last_reverses
+    reverses.reverse_chronologically.limit(5)
+  end
+
+  def reverses_with_status(status)
+    reverses.public_send("#{status}").count
+  end
+
   def exchange_reverses
     @exchange_reverses ||= reverses.exchange
   end
@@ -14,11 +22,13 @@ class DashboardReport
   end
 
   def exchange_products
-    @exchange_products ||= reverses.exchange.map(&:products)
+    reverse_ids = reverses.exchange.pluck(:id)
+    @exchange_products ||= Product.where(reverse_id: reverse_ids)
   end
 
   def return_products
-    @return_products ||= reverses.return.map(&:products)
+    reverse_ids = reverses.return.pluck(:id)
+    @return_products ||= Product.where(reverse_id: reverse_ids)
   end
 
   private

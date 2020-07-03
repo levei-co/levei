@@ -93,6 +93,8 @@ GEM
       warden (~> 1.2.3)
     dry-inflector (0.2.0)
     erubi (1.9.0)
+    faker (2.13.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     geared_pagination (1.0.1)
       activesupport (>= 5.0)
@@ -259,6 +261,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chartkick
   devise
+  faker
   geared_pagination
   groupdate
   jbuilder (~> 2.7)

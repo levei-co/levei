@@ -13,7 +13,7 @@
             <h4>Em progresso</h4>
           </div>
           <div class="card-body">
-            <%= @reverses.scheduled.count %>
+            <%= @report.reverses_with_status('scheduled') %>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
             <h4>Coletado</h4>
           </div>
           <div class="card-body">
-            <%= @reverses.collected.count %>
+            <%= @report.reverses_with_status('collected') %>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
             <h4>Transporte</h4>
           </div>
           <div class="card-body">
-            <%= @reverses.shipped.count %>
+            <%= @report.reverses_with_status('shipped') %>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
             <h4>Entregue</h4>
           </div>
           <div class="card-body">
-            <%= @reverses.delivered.count %>
+            <%= @report.reverses_with_status('delivered') %>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@
                 </tr>
               </thead>
               <tbody data-target="infinite-page.container">
-                <% @reverses.each do |reverse| %>
+                <% @report.last_reverses.each do |reverse| %>
                   <tr data-target="infinite-page.item">
                     <td><%= reverse.reason %></td>
                     <td><%= reverse.status %></td>
@@ -150,8 +150,8 @@
           <div class="summary">
             <div class="summary-chart active" data-tab-group="summary-tab" id="summary-chart">
               <%= area_chart([
-                {name: 'Primeiro', data: { 'Sat, 24 May 2020' => 50, 'Sun, 25 May 2020' => 100, 'Mon, 26 May 2020' => 34 }},
-                {name: 'Segundo', data: { 'Sat, 24 May 2020' => 70, 'Sun, 25 May 2020' => 10, 'Mon, 26 May 2020' => 44 }}
+                {name: 'Primeiro', data: @report.exchange_products.group_by_day(:created_at).count},
+                {name: 'Segundo', data: @report.return_products.group_by_day(:created_at).count}
               ], colors: ["rgba(63,82,227,.8)", "rgba(254,86,83,.7)"], legend: false, points: false, dataset: {borderColor: 'transparent'} ) %>
             </div>
             <div class="summary-item">
