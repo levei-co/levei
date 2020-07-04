@@ -39,6 +39,7 @@ gem 'devise'
 gem 'chartkick'
 gem 'groupdate'
 gem 'faker'
+gem 'i18n'
 
 group :production do
   gem 'redis'
