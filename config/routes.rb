@@ -19,5 +19,11 @@ Rails.application.routes.draw do
     get '/report' => 'dashboard#report'
     resources :reverses
   end
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      get '/search_order' => 'search#show', as: :search_order
+    end
+  end
   mount Sidekiq::Web => '/sidekiq'
 end
