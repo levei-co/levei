@@ -36,6 +36,7 @@
                 <th><%= sort_link_turbo(@search, :external_order_id, 'Pedido') %></th>
                 <th><%= sort_link_turbo(@search, :status) %></th>
                 <th><%= sort_link_turbo(@search, :reason, 'Motivo') %></th>
+                <th><%= sort_link_turbo(@search, :reason_change_to, 'Alterado para') %></th>
                 <th></th>
               </tr>
             </thead>
@@ -43,8 +44,9 @@
               <% @reverses.each do |reverse| %>
                 <tr data-target="infinite-page.item">
                   <td><%= reverse.external_order_id %></td>
-                  <td><%= reverse.status %></td>
-                  <td><%= reverse.reason %></td>
+                  <td><div class="badge badge-<%= reverse.status_badge %>"><%= Reverse.human_enum_name(:status, reverse.status) %></div></td>
+                  <td><%= Reverse.human_enum_name(:reason, reverse.reason) %></td>
+                  <td><%= Reverse.human_enum_name(:reason_change_to, reverse.reason_change_to) %></td>
                   <td>
                     <%= link_to icon('fas fa-eye'), reverse, title: 'Show it', class: 'btn btn-icon btn-sm btn-info mr-1' %>
                   </td>

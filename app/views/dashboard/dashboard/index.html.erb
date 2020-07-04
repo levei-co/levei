@@ -81,19 +81,23 @@
                   <th>Numero do Pedido</th>
                   <th>Data</th>
                   <th>Status</th>
-                  <th>Detalhes</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody data-target="infinite-page.container">
                 <% @report.last_reverses.each do |reverse| %>
                   <tr data-target="infinite-page.item">
-                    <td><%= reverse.reason %></td>
-                    <td><%= reverse.status %></td>
+                    <td><%= Reverse.human_enum_name(:reason, reverse.reason) %></td>
+                    <td class="align-middle">
+                      <div class="progress" data-height="4" data-toggle="tooltip" title="<%= reverse.status_progress %>">
+                        <div class="progress-bar bg-<%= reverse.status_badge %>" data-width="<%= reverse.status_progress %>"></div>
+                      </div>
+                    </td>
                     <td><%= reverse.external_order_id %></td>
-                    <td><%= reverse.created_at %></td>
-                    <td><%= reverse.status %></td>
+                    <td><%= reverse.created_at.strftime('%d/%m/%Y') %></td>
+                    <td><div class="badge badge-<%= reverse.status_badge %>"><%= Reverse.human_enum_name(:status, reverse.status) %></div></td>
                     <td>
-                      <%= link_to icon('fas fa-eye'), reverse, title: 'Show it', class: 'btn btn-icon btn-sm btn-info mr-1' %>
+                      <%= link_to 'Detalhe', reverse, title: 'Exibir', class: 'btn btn-primary' %>
                     </td>
                   </tr>
                 <% end %>

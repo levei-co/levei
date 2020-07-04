@@ -21,6 +21,14 @@ class DashboardReport
     @return_reverses ||= reverses.return
   end
 
+  def return_revert_credit
+    @return_revert_credit ||= reverses.return.credit
+  end
+
+  def return_revert_exchange
+    @return_revert_exchange ||= reverses.return.shift
+  end
+
   def exchange_products
     reverse_ids = reverses.exchange.pluck(:id)
     @exchange_products ||= Product.where(reverse_id: reverse_ids)

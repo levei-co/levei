@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Levei
   class Application < Rails::Application
     config.app                            = config_for(:config)
-    config.i18n.default_locale            = :en
+    config.i18n.default_locale            = :'pt-BR'
     config.time_zone                      = 'UTC'
     config.generators.scaffold_stylesheet = false
     # Initialize configuration defaults for originally generated Rails version.

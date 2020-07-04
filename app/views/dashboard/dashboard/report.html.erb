@@ -17,7 +17,7 @@
             <h4>Trocas</h4>
           </div>
           <div class="card-body">
-            10
+            <%= @report.exchange_reverses.count %>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
             <h4>Devolucoes(creditos)</h4>
           </div>
           <div class="card-body">
-            43
+            <%= @report.return_reverses.count %>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
             <h4>Devolucoes(estorno)</h4>
           </div>
           <div class="card-body">
-            43
+            0
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
           <h5><small>Vejo quanto voce ja economizou desde que comecou a usar a Levei</small></h5>
           </br>
           <%= area_chart(
-              { 'Sat, 24 May 2020' => 50, 'Sun, 25 May 2020' => 100, 'Mon, 26 May 2020' => 34 }, 
+              { 'Segunda' => 50, 'Terca' => 55, 'Quarta' => 79, 'Quinta' => 100, 'Sexta' => 138 }, 
               colors: ["rgba(63,82,227,.8)"], 
               legend: false, 
               dataset: {borderColor: '#6777ef', pointBackgroundColor: '#ffffff', pointRadius: 4} 
@@ -80,8 +80,8 @@
           <h5><small>Veja as conversoes de devolucao</small></h5>
           </br>
           <%= column_chart([
-            {name: 'Estornos convertidos em creditos', data: { 'Sat, 24 May 2020' => 50, 'Sun, 25 May 2020' => 100, 'Mon, 26 May 2020' => 34 }},
-            {name: 'Devolucoes convertidas em trocas', data: { 'Sat, 24 May 2020' => 70, 'Sun, 25 May 2020' => 10, 'Mon, 26 May 2020' => 44 }}
+            {name: 'Estornos convertidos em creditos', data: @report.return_revert_credit.group_by_day(:created_at).count},
+            {name: 'Devolucoes convertidas em trocas', data: @report.return_revert_exchange.group_by_day(:created_at).count}
           ], colors: ["rgba(254,86,83,.7)", "rgba(63,82,227,.8)"], legend: "bottom") %>
         </div>
       </div>
@@ -93,14 +93,14 @@
           <h5><small>Indice de satisfacao do cliente</small></h5>
           </br>
           <%= pie_chart(
-            { 'Sat, 24 May 2020' => 79, 'Sun, 25 May 2020' => 21 },
+            { '87' => 87, '13' => 13 },
             legend: false,
             donut: true,
             colors: ["#63ed7a"],
             library: {cutoutPercentage: 85}
           ) %>
           <div class="chart-text-center text-center">
-            <h1><strong>79</strong></h1>
+            <h1><strong>87</strong></h1>
             <h2><small>Pontos</small></h2>
           </div>
         </div>
