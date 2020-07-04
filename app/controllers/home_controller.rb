@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
+  layout 'static'
   def index
-    redirect_to controller: 'dashboard/dashboard', action: :index
   end
 end

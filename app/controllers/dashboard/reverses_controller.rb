@@ -1,4 +1,7 @@
-class Dashboard::ReversesController < Dashboard::DashboardController
+class Dashboard::ReversesController < ::ApplicationController
+  layout 'dashboard'
+  
+  before_action :authenticate_user!
   before_action :set_reverse, only: %i[ show edit update destroy ]
 
   def index

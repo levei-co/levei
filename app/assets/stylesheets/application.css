@@ -16,7 +16,12 @@
  *= require izitoast/dist/css/iziToast
  *= require stisla/style
  *= require stisla/components
- *= require_tree .
+ *= require loading
+ *= require mobile
+ *= require printing
+ *= require dashboard/report
+ *= require dashboard/reverses
+ *= require dashboard/dashboard
  *= stub mobile
  *= require_self
  */
