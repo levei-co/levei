@@ -40,10 +40,10 @@ pt-BR:
           delivered: Entregue
         reasons:
           exchange: Troca
-          return: Devolucao
+          return: Devolução
         reason_change_tos:
           shift: Troca
-          credit: Credito
+          credit: Crédito
   number:
     format:
       precision: 2

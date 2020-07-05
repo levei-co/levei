@@ -22,4 +22,8 @@ class Reverse < ApplicationRecord
       'warning'
     end
   end
+
+  def refund!
+    update(refund_at: Datetime.now)
+  end
 end

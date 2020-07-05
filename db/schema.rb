@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_131946) do
+ActiveRecord::Schema.define(version: 2020_07_04_222852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_131946) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "reason_change_to"
     t.bigint "buyer_id"
+    t.datetime "refund_at"
     t.index ["buyer_id"], name: "index_reverses_on_buyer_id"
     t.index ["user_id"], name: "index_reverses_on_user_id"
   end

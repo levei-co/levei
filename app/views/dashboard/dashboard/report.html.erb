@@ -1,9 +1,9 @@
 <section class="section">
   <div class="section-header d-mobile-none">
-    <h1>Relatorio</h1>
+    <h1>Relatório</h1>
      <div class="section-header-breadcrumb">
       <div class="breadcrumb-item"><%= link_to 'Dashboard', root_path %></div>
-      <div class="breadcrumb-item">Relatorio</div>
+      <div class="breadcrumb-item">Relatório</div>
     </div>
   </div>
   <div class="row">
@@ -29,7 +29,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Devolucoes(creditos)</h4>
+            <h4>Devoluções(créditos)</h4>
           </div>
           <div class="card-body">
             <%= @report.return_reverses.count %>
@@ -44,7 +44,7 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Devolucoes(estorno)</h4>
+            <h4>Devoluções(estorno)</h4>
           </div>
           <div class="card-body">
             0
@@ -59,10 +59,10 @@
       <div class="card">
         <div class="card-body">
           <h5>Economia em logistica reversa</h5>
-          <h5><small>Vejo quanto voce ja economizou desde que comecou a usar a Levei</small></h5>
+          <h5><small>Vejo quanto voce já economizou desde que começou a usar a Levei</small></h5>
           </br>
           <%= area_chart(
-              { 'Segunda' => 50, 'Terca' => 55, 'Quarta' => 79, 'Quinta' => 100, 'Sexta' => 138 }, 
+              { 'Segunda' => 50, 'Terça' => 55, 'Quarta' => 79, 'Quinta' => 100, 'Sexta' => 138 }, 
               colors: ["rgba(63,82,227,.8)"], 
               legend: false, 
               dataset: {borderColor: '#6777ef', pointBackgroundColor: '#ffffff', pointRadius: 4} 
@@ -76,12 +76,12 @@
     <div class="col-6 col-sm-6 col-lg-6">
       <div class="card">
         <div class="card-body">
-          <h5>Conversoes</h5>
-          <h5><small>Veja as conversoes de devolucao</small></h5>
+          <h5>Conversões</h5>
+          <h5><small>Veja as conversões de devolução</small></h5>
           </br>
           <%= column_chart([
-            {name: 'Estornos convertidos em creditos', data: @report.return_revert_credit.group_by_day(:created_at).count},
-            {name: 'Devolucoes convertidas em trocas', data: @report.return_revert_exchange.group_by_day(:created_at).count}
+            {name: 'Estornos convertidos em créditos', data: @report.return_revert_credit.group_by_day(:created_at).count},
+            {name: 'Devoluções convertidas em trocas', data: @report.return_revert_exchange.group_by_day(:created_at).count}
           ], colors: ["rgba(254,86,83,.7)", "rgba(63,82,227,.8)"], legend: "bottom") %>
         </div>
       </div>
@@ -90,7 +90,7 @@
       <div class="card">
         <div class="card-body">
           <h5>NPS</h5>
-          <h5><small>Indice de satisfacao do cliente</small></h5>
+          <h5><small>Índice de satisfação do cliente</small></h5>
           </br>
           <%= pie_chart(
             { '87' => 87, '13' => 13 },

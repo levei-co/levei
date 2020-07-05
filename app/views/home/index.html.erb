@@ -4,15 +4,13 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center">
-          <h1 class="logo mr-auto"><a href="index.html">Levei</a></h1>
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+          <%= image_tag('home/logo-levei-branco.png', alt: 'logo', width: '120', class: "logo mr-auto img-fluid") %>
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
               <li class="active"><a href="index.html">Home</a></li>
               <li><a href="#about">Sobre</a></li>
-              <li><a href="#services">Servicos</a></li>
+              <li><a href="#services">Serviços</a></li>
               <li><a href="#contact">Contato</a></li>
 
             </ul>
@@ -32,7 +30,7 @@
       <div class="row justify-content-center">
         <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1>Simplicidade, agilidade e economia para o seu negócio</h1>
-          <h2>reduzimos os custos com a logística reversa, convertemos os chargebacks utilizando um sistema inteligente de recomendações e garantimos a comodidade, segurança e satisfação do seu cliente</h2>
+          <h2>reduzimos os custos da logística reversa, convertemos os chargebacks(estorno) utilizando um sistema inteligente de recomendações e garantimos a comodidade, segurança e satisfação do seu cliente</h2>
         </div>
         <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
           <%= image_tag('home/hero-img.png', alt: '', class: 'img-fluid animated') %>
@@ -55,17 +53,14 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
             <h3>O que é a Levei?</h3>
             <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              Levei é um serviço que agiliza trocas e devoluções com coleta agendada e atendimento automatizado, 
+              gerando a fidelização de clientes através de uma boa experiência de troca.
             </p>
             <ul>
               <li><i class="far fa-check-circle"></i> Oferece agilidade e melhoria nos processos de trocas e devoluções do seu e-commerce.</li>
               <li><i class="far fa-check-circle"></i> Garantindo um atendimento personalizado ao seus cliente.</li>
               <li><i class="far fa-check-circle"></i> Realizando sua troca/devolução de uma maneira cômoda e sem sair de casa.</li>
             </ul>
-            <%# <p>A levei oferece agilidade e melhoria nos processos de trocas e devoluções do seu e-commerce, 
-              garantindo um atendimento personalizado ao seus cliente e realizando sua troca/devolução de uma maneira cômoda e sem sair de casa.</p> %>
-            <a href="/" class="read-more">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
           </div>
         </div>
 
@@ -76,33 +71,8 @@
     <section id="counts" class="counts">
       <div class="container">
         <div class="col-lg-12 col-12 text-center" style="color: #fff">
-          <h1>Melhoramos seu servico de Troca e Devolucao</h1>
+          <h1>Melhoramos seu serviço de Troca e Devolução</h1>
         </div>
-
-        <%# <div class="row counters">
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">232</span>
-            <p>Clients</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">521</span>
-            <p>Projects</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">1,463</span>
-            <p>Hours Of Support</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">15</span>
-            <p>Hard Workers</p>
-          </div>
-
-        </div> %>
-
       </div>
     </section>
     <!-- End Counts Section -->
@@ -113,7 +83,8 @@
 
         <div class="section-title">
           <h2>Nosso diferencial</h2>
-          <p>A Levei faz a diferença na vida das pessoas oferecendo um serviço em que o comprador possa realizar essa troca sem sair de casa.</p>
+          <p>A Levei faz a diferença para todos os envolvidos, 
+            melhorando a experiência de troca do comprador sem sair de casa e ajudando o vendedor a reduzir custos e prazos de atendimento.</p>
         </div>
 
         <div class="row">
@@ -126,7 +97,7 @@
                 <i class="bx bxl-dribbble"></i>
               </div>
               <h4><a href="">Chatbot</a></h4>
-              <p>Canal de comunicação com o cliente para agendamentos e coleta de dados.</p>
+              <p>Canal de comunicação com o cliente para coleta de dados e agendamento de retirada da mercadoria.</p>
             </div>
           </div>
 
@@ -138,8 +109,8 @@
                 </svg>
                 <i class="bx bx-file"></i>
               </div>
-              <h4><a href="">Sistema Inteligente</a></h4>
-              <p>Analisar os dados coletados na comunicação via Chatbot e prestar um atendimento personalizado.</p>
+              <h4><a href="">Sistema inteligente</a></h4>
+              <p>Analisa os dados coletados durante a conversa com o Chatbot e oferece soluções personalizadas para o cliente.</p>
             </div>
           </div>
 
@@ -152,7 +123,7 @@
                 <i class="bx bx-tachometer"></i>
               </div>
               <h4><a href="">Coleta domiciliar</a></h4>
-              <p>Agendamento e busca do produto por nossos parceiros na casa do cliente.</p>
+              <p>Busca do produto por nossos parceiros na casa do cliente, no horário que escolheu no atendimento do Chatbot.</p>
             </div>
           </div>
 
@@ -165,36 +136,9 @@
                 <i class="bx bx-layer"></i>
               </div>
               <h4><a href="">Plataforma de gestão</a></h4>
-              <p>Uma plataforma que gera relatórios periódicos de controle financeiro e estoque para seu negócio.</p>
+              <p>Uma plataforma de acesso exclusivo do e-commerce, que gera relatórios periódicos de controle financeiro, estoque e acompanhamento das solicitações.</p>
             </div>
           </div>
-
-          <%# <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-red">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
-                </svg>
-                <i class="bx bx-slideshow"></i>
-              </div>
-              <h4><a href="">Dele Cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-teal">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"></path>
-                </svg>
-                <i class="bx bx-arch"></i>
-              </div>
-              <h4><a href="">Divera Don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-            </div>
-          </div> %>
-
         </div>
 
       </div>
@@ -205,7 +149,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Como funciona</h2>
+          <h2>Como funciona?</h2>
           <%# <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> %>
         </div>
 
@@ -220,7 +164,7 @@
               <i class="bx bx-cube-alt"></i>
               <h4>Sistema inteligente</h4>
               <p>No contato com o cliente identificamos o problema e oferecemos recomendações de produtos similares, 
-              utilizando Machine Learning, melhorando a experiencia do cliente e diminuindo Charge Backs.</p>
+              utilizando Machine Learning, melhoramos a experiência do cliente e diminuimos os Chargebacks(estorno).</p>
             </div>
             <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="300">
               <i class="bx bx-images"></i>
@@ -256,139 +200,63 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="box">
               <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
+              <h4><sup>R$</sup>30<span> / envio</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li>Ilimitado</li>
+                <li>Bot de Atendimento</li>
+                <li>Recomendações na Troca</li>
+                <li>Rastreamento e notificação</li>
+                <li>Coleta domiciliar</li>
+                <li class="na">Taxa de envio competitiva</li>
+                <li class="na">Embalagens gratuitas</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#" class="btn-buy">Comprar</a>
               </div>
             </div>
           </div>
-
-          <%# <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
-            <div class="box featured">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div> %>
 
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="box">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
+              <h3>Seller</h3>
+              <h4><sup>R$</sup>500<span> / mês</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li>Até 25 envios por mês</li>
+                <li>Bot de Atendimento</li>
+                <li>Recomendações na Troca</li>
+                <li>Rastreamento e notificação</li>
+                <li>Coleta domiciliar</li>
+                <li>Taxa de envio competitiva</li>
+                <li class="na">Embalagens gratuitas</li>
               </ul>
               <div class="btn-wrap">
-                <a href="" class="btn-buy">Buy Now</a>
+                <a href="" class="btn-buy">Comprar</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="box">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
+              <h3>Ecommerce</h3>
+              <h4><sup>R$</sup>2.500<span> / mês</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li>Até 250 envios por mês</li>
+                <li>Bot de Atendimento</li>
+                <li>Recomendações na Troca</li>
+                <li>Rastreamento e notificação</li>
+                <li>Coleta domiciliar</li>
+                <li>Taxa de envio competitiva</li>
+                <li>Embalagens gratuitas</li>
               </ul>
               <div class="btn-wrap">
-                <a href="" class="btn-buy">Buy Now</a>
+                <a href="" class="btn-buy">Comprar</a>
               </div>
             </div>
           </div>
-
         </div>
 
       </div>
     </section><!-- End Pricing Section -->
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <%# <section id="faq" class="faq">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Frequently Asked Questions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="faq-list">
-          <ul>
-            <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse" data-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse" data-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-4" class="collapse" data-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="500">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-5" class="collapse" data-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </section> %>
-    <!-- End Frequently Asked Questions Section -->
 
   </main><!-- End #main -->
 
@@ -402,9 +270,9 @@
           <div class="col-lg-6 col-md-6 footer-contact">
             <h3>Levei</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
+              Avenida Princase Isabel <br>
+              Copacabana, RJ<br>
+              Brasil <br><br>
               <strong>Telefone:</strong> (99) 9999-9999<br>
               <strong>Email:</strong> faleconosco@levei.co<br>
             </p>
@@ -414,31 +282,12 @@
             <h4>Menu</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Serviços</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">Sobre</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Serviços</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
-
-          <%# <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div> %>
-
-          <%# <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div> %>
 
         </div>
       </div>
@@ -451,20 +300,11 @@
           <div class="copyright">
             &copy; Copyright <strong><span>Levei</span></strong>. All Rights Reserved
           </div>
-          <%# <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/techie-free-skin-bootstrap-3/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div> %>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
           <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
           <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <%# <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> %>
         </div>
       </div>
 
